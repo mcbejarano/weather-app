@@ -32,13 +32,20 @@ const data2 = {
 class WeatherLocation extends Component {
   constructor() {
     super();
-    console.log(fetch(api_weather));
     this.state = {
       city: 'Corrientes',
       data: data,
-    }
+    };
   }
+
   handleUpdateClick = () => {
+    fetch(api_weather).then( resolve => {
+      return resolve.json;
+    }).then( data => {
+      console.log(data);
+      debugger;
+    }); 
+
     this.setState({
         data: data2,
     });
