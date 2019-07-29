@@ -1,12 +1,10 @@
 import convert from 'convert-units';
 import {
   CLOUD,
-  CLOUDY,
   SUN,
   RAIN,
   SNOW,
-  WINDY,
-  TRUNDER,
+  THUNDER,
   DRIZZLE,
 } from './../constants/weathers';
 
@@ -17,17 +15,17 @@ const getTemp = kelvin => {
 const getWeatherState = weather => {
   const { id }= weather;
   if (id < 300) {
-    return 'THUNDER';
+    return THUNDER;
   } else if (id < 400) {
-    return 'DRIZZLE';
+    return DRIZZLE;
   } else if (id < 600) {
-    return 'RAIN';
+    return RAIN;
   } else if (id < 700) {
-    return 'SUN';
+    return SNOW;
   } else if (id === 800) {
-    return 'SUN';
+    return SUN;
   } else {
-    return 'CLOUDY';
+    return CLOUD;
   }
 }
 
