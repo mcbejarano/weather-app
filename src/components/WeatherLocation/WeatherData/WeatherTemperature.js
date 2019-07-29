@@ -9,6 +9,8 @@ import {
   RAIN,
   SNOW,
   WINDY,
+  TRUNDER,
+  DRIZZLE,
 } from './../../../constants/weathers';
 
 const icons = {
@@ -17,7 +19,9 @@ const icons = {
   [SUN]: "day-sunny",
   [RAIN]: "rain",
   [SNOW]: "snow",
-  [WINDY]: "windy"
+  [WINDY]: "windy",
+  [TRUNDER]: "day-thunderstore",
+  [DRIZZLE]: "day-showers",
 };
 
 const getWeatherIcon = weatherState => {
