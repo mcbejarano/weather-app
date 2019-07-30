@@ -1,13 +1,15 @@
 import React from 'react';
-import WeatherLocation from './WeatherLocation'
+import WeatherLocation from './WeatherLocation';
+import PropTypes from 'prop-types';
 
-const LocationList = () => (
+const LocationList = ({ cities }) => (
     <div>
         <WeatherLocation city="Corrientes,ar"/>
-        <WeatherLocation city="Parana,ar"/>
-        <WeatherLocation city="Calafate,ar"/>
-        <WeatherLocation city="Cafayate,ar"/>
     </div>
 );
+
+LocationList.propTypes = {
+    cities: PropTypes.array.isRequired,
+}
 
 export default LocationList;
