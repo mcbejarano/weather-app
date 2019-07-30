@@ -8,12 +8,19 @@ const cities = [
   "Sevilla,es",
   "London,uk",
   "Texas,us",
+  "Humahuaca,ar",
 ];
 
 function App() {
+  const handleWeatherLocationClick = city => {
+    console.log("handleWeatherLocationClick");
+  };  
   return (
     <div className="App">
-      <LocationList cities={cities} />
+      <LocationList 
+        cities={cities} 
+        onSelectLocation={handleWeatherLocationClick} 
+        />
     </div>
   );
 }
