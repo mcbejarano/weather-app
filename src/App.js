@@ -1,4 +1,5 @@
 import React from 'react';
+import { Component } from 'react';
 import LocationList from './components/LocationList'
 import './App.css';
 
@@ -11,18 +12,21 @@ const cities = [
   "Humahuaca,ar",
 ];
 
-function App() {
-  const handleWeatherLocationClick = city => {
-    console.log("handleWeatherLocationClick");
+class App extends Component {
+
+  handleSelectedLocationClick = city => {
+    console.log(`handleSelectedLocationClick ${city}`);
   };  
-  return (
-    <div className="App">
-      <LocationList 
-        cities={cities} 
-        onSelectLocation={handleWeatherLocationClick} 
-      />
-    </div>
-  );
+  render(){
+    return (
+      <div className="App">
+        <LocationList 
+          cities={cities} 
+          onSelectedLocation={this.handleSelectedLocationClick} 
+        />
+      </div>
+    );
+  }
 }
 
 export default App;

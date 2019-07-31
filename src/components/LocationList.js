@@ -2,10 +2,10 @@ import React from 'react';
 import WeatherLocation from './WeatherLocation';
 import PropTypes from 'prop-types';
 
-const LocationList = ({ cities, onSelectLocation }) => {
+const LocationList = ({ cities, onSelectedLocation }) => {
     const handleWeatherLocationClick = city => {
         console.log ("handleWeatherLocationClick");
-        onSelectLocation(city);
+        onSelectedLocation(city);
     }
 
     const strToComponent = cities => (        
@@ -26,7 +26,7 @@ const LocationList = ({ cities, onSelectLocation }) => {
 
 LocationList.propTypes = {
     cities: PropTypes.array.isRequired,
-    onSelectLocation: PropTypes.func,
+    onSelectedLocation: PropTypes.func,
 }
 
 export default LocationList;
