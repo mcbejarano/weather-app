@@ -20,7 +20,7 @@ function App() {
       <LocationList 
         cities={cities} 
         onSelectLocation={handleWeatherLocationClick} 
-        />
+      />
     </div>
   );
 }
