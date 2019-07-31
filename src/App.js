@@ -1,9 +1,14 @@
 import React from 'react';
 import { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import Paper from '@material-ui/core/Paper';
+import AppBar from '@material-ui/core/AppBar';
+import Typography from '@material-ui/core/Typography';
+import Toolbar from '@material-ui/core/Toolbar';
+import { MuiThemeProvider } from '@material-ui/core';
 import LocationList from './components/LocationList'
 import './App.css';
-import { MuiThemeProvider } from '@material-ui/core';
+
 
 const cities = [
   "Corrientes,ar",
@@ -21,30 +26,32 @@ class App extends Component {
   };  
   render(){
     return (
-      <MuiThemeProvider>
-        <Grid fluid>
-          <Row>
-            <Col xs={12} sm={6} md={4}>
-                <div className="red"></div>
-            </Col>
-            <Col xs={12} sm={6} md={4}>
-                <div className="blue"></div>
-            </Col>
-            <Col xs={12} sm={6} md={4}>
-                <div className="green"></div>
-            </Col>
-          </Row>
-        </Grid>
-      
-
-        {/* <div className="App">
+       <Grid>
+         <Row>
+          <AppBar position="sticky">
+            <Toolbar> 
+              <Typography variant="title" color="inherit">
+                  Weather App
+              </Typography>
+            </Toolbar>
+          </AppBar>
+         </Row>
+         <Row>  
+           <Col xs={12} md={6}>
               <LocationList 
                 cities={cities} 
                 onSelectedLocation={this.handleSelectedLocationClick} 
               />
-            </div>*/
-        } 
-      </MuiThemeProvider>
+           </Col>
+           <Col xs={12} md={6}>
+              <div className="details" >
+                
+              </div>
+           </Col>
+
+         </Row>
+              
+       </Grid>
     );
   }
 }
